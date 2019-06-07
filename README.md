@@ -5,7 +5,8 @@ If we are trying to build a model to make important decisions, like in healthcar
 
 This project is about detecting pneumonia or no pneumonia from x-ray images of pediatric patients and try to explain the predictions of the Network. The explanations from the model was compared to Medical Doctors' statements. 
 
-Example: We trained our model (MobileNet Fine-Tuned) and achieved 99.4% Recall. This network is 100.00% sure the bellow picture is PNEUMONIA and it is right. Bellow we can see the explanation of a MD and if the Grad-CAM explainer and Lime explainer which we used.
+Examples: We trained our model (MobileNet Fine-Tuned) and achieved 99.4% Recall. 
+* Our network is 100.00% sure the below picture is **PNEUMONIA** and it is right. Below we can see the explanation of a MD and of the Grad-CAM explainer and Lime explainer which we used.
 
 ![An example of Peumonia](https://user-images.githubusercontent.com/31864574/59109088-146dce00-8945-11e9-8528-bac49b832b42.png)
 Left: the original X-ray.  Right: the MD's quick diagnose.
@@ -13,9 +14,19 @@ Left: the original X-ray.  Right: the MD's quick diagnose.
 ![2](https://user-images.githubusercontent.com/31864574/59109434-b55c8900-8945-11e9-8254-6ba6d81c27c8.png)
 Left: Grad-CAM explainer.  Right: Lime explainer.
 
+We can see that the Grad-CAM explainer shows that the network believes that the area near R (which indicates the right side of the X-ray) is important which is misleading information according to MD’s diagnose.
+
+
+* Our network is 99.48% sure the bellow picture is **NORMAL** and it is right. Bellow we can see the explanation of the Grad-CAM explainer and Lime explainer which we used.
+We can see that the explainers indicate that the whole lungs are important to take the decision.
+
+![norm](https://user-images.githubusercontent.com/31864574/59113868-94e4fc80-894e-11e9-934f-1cb8d15c665f.png)
+Left: the original X-ray.  Right: Grad-CAM explainer.
+
+![norm1](https://user-images.githubusercontent.com/31864574/59114140-30766d00-894f-11e9-8b95-05cd05f21169.png)
+Left: Lime explainer, just the region.  Right: Lime explainer, the whole picture (green region Pros of NORMAL label).
+
 Note: We can definatly make a better model, but from the above two explanations we know that the model is learning.
-
-
 
 
 ## Frameworks & Technologies
@@ -58,16 +69,30 @@ Lime method works by making alterations on different features on a particular in
 
 
 ## More case examples
-* Case 1: A model with 99.4% Recall
-Here the network is 100.00% sure this x-ray is PNEUMONIA. But as we can see from the Grad-CAM method it has a lot of misleading patterns
+* Case 1: Our model with 99.4% Recall. 
+Here the network is 100.00% sure this x-ray is PNEUMONIA. This is our first example. Bellow we can see from Lime library the Pros (with Green) and Cons (with red) of the lime explainer, using: positive_only=False and hide_rest=False.
+![PNprco](https://user-images.githubusercontent.com/31864574/59115706-839def00-8952-11e9-8e5f-07f642974d98.png)
 
-*  Case 2: Our oun CNN with 94.3% Recall, which we thought that was training great but it was creating patterns where was nothing.
-![1 - Copy](https://user-images.githubusercontent.com/31864574/59111367-8ea05180-8949-11e9-966d-1b5027e05462.png)
+
+*  Case 2: Our model with 99.4% Recall
+Our network is 100.00% sure the below picture is PNEUMONIA and it is right. Below we can see the explanation of a MD and of the Grad-CAM explainer and Lime explainer which we used.
+
+![pn2](https://user-images.githubusercontent.com/31864574/59117252-fc527a80-8955-11e9-89bc-5e3b02247e95.png)
+Left: the original X-ray. Right: the MD's quick diagnose.
+
+![pn2_1](https://user-images.githubusercontent.com/31864574/59117883-851de600-8957-11e9-9ee7-a4086eed5ab9.png)
+Left: Grad-CAM explainer. Right: Lime explainer.
+
+In this case, both Grad-CAM explainer and Lime explainer indicate wrong areas of interest. 
+
+
+*  Case 3: Another network, our own CNN architecture with 94.3% Recall, which we thought that was training great but it was creating patterns where was nothing. 
+![1Co](https://user-images.githubusercontent.com/31864574/59111367-8ea05180-8949-11e9-966d-1b5027e05462.png)
 
 
 ## Outcomes:
 * As we can see the Lime method explains better what a convolutional neural network has seen.
-* 
+* With more tuning of the hyperparameters and trying different architectures we can achieve better performance.
 
 
 ## More to see
