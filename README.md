@@ -105,16 +105,16 @@ In this case, both Grad-CAM explainer and Lime explainer indicate wrong areas of
 
 
 ## References
-* Dataset: https://www.kaggle.com/paultimothymooney/detecting-pneumonia-in-x-ray-images
-* MobileNet: https://arxiv.org/abs/1704.04861
-* Grad-CAM: https://arxiv.org/abs/1610.02391
-* Francois Chollet - Deep Learning with Python (2017, Manning Publications), Chapter 5
-* https://medium.com/@mohamedchetoui/grad-cam-gradient-weighted-class-activation-mapping-ffd72742243a
-* http://www.hackevolve.com/where-cnn-is-looking-grad-cam/
-* Lime library: https://github.com/marcotcr/lime
-* Model-Agnostic Interpretability of Machine Learning https://arxiv.org/abs/1606.05386
-* "Why Should I Trust You?": Explaining the Predictions of Any Classifier https://arxiv.org/abs/1602.04938
-* https://towardsdatascience.com/understanding-how-lime-explains-predictions-d404e5d1829c
+1. Dataset: https://www.kaggle.com/paultimothymooney/detecting-pneumonia-in-x-ray-images
+2. MobileNet: https://arxiv.org/abs/1704.04861
+3. Grad-CAM: https://arxiv.org/abs/1610.02391
+4. Francois Chollet - Deep Learning with Python (2017, Manning Publications), Chapter 5
+5. https://medium.com/@mohamedchetoui/grad-cam-gradient-weighted-class-activation-mapping-ffd72742243a
+6. http://www.hackevolve.com/where-cnn-is-looking-grad-cam/
+7. Lime library: https://github.com/marcotcr/lime
+8. Model-Agnostic Interpretability of Machine Learning https://arxiv.org/abs/1606.05386
+9. "Why Should I Trust You?": Explaining the Predictions of Any Classifier https://arxiv.org/abs/1602.04938
+10. https://towardsdatascience.com/understanding-how-lime-explains-predictions-d404e5d1829c
 
 
 ## License
