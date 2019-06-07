@@ -72,12 +72,12 @@ Lime method works by making alterations on different features on a particular in
 
 ## More case examples
 * Case 1: Our model with 99.4% Recall. 
-Here the network is 100.00% sure this x-ray is PNEUMONIA. This is our first example. Bellow we can see from Lime library the Pros (with Green) and Cons (with red) of the lime explainer, using: positive_only=False and hide_rest=False.
+Here the network is 100.00% sure this x-ray is PNEUMONIA and it is right. This is our first example. Bellow we can see from Lime library the Pros (with Green) and Cons (with red) of the lime explainer, using: positive_only=False and hide_rest=False.
 ![PNprco](https://user-images.githubusercontent.com/31864574/59115706-839def00-8952-11e9-8e5f-07f642974d98.png)
 
 
 *  Case 2: Our model with 99.4% Recall
-Our network is 100.00% sure the below picture is PNEUMONIA and it is right. Below we can see the explanation of a MD and of the Grad-CAM explainer and Lime explainer which we used.
+Here the network is 100.00% sure this x-ray is PNEUMONIA and it is right. Below we can see the explanation of a MD and of the Grad-CAM explainer and Lime explainer which we used.
 
 ![pn2](https://user-images.githubusercontent.com/31864574/59117252-fc527a80-8955-11e9-89bc-5e3b02247e95.png)
 Left: the original X-ray. Right: the MD's quick diagnose.
