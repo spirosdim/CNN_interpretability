@@ -38,6 +38,8 @@ Keras, Lime, OpenCV, Numpy, Pandas, matplotlib, Glob, google.colab, Kaggle
 There are 5,863 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal). Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care. 
 [(kaggle link)](https://www.kaggle.com/paultimothymooney/detecting-pneumonia-in-x-ray-images)
 
+![d](https://user-images.githubusercontent.com/31864574/59118849-ea72d680-8959-11e9-830e-9372bcdf8f69.png)
+
 ## Model
 Transfer learning was used, more significantly the MobileNet with the trained weights on imagenet. I did some modifications to the MobileNet to adapt it to this case.  The weights of the first 34 layers were freezed, of total 92 layers.
 
@@ -56,14 +58,14 @@ learing curves
 ## Model Explainability
 For the network's explanation, two techniques are used:
 
-1. *Gradient-weighted Class Activation Mapping* (Grad-CAM), a technique for producing "visual explanations" for decisions from a large class of CNN-based models, making them more transparent, by Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh, Dhruv Batra.
+1. **Gradient-weighted Class Activation Mapping** (Grad-CAM), a technique for producing "visual explanations" for decisions from a large class of CNN-based models, making them more transparent, by Ramprasaath R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh, Dhruv Batra.
 ‘Grad-CAM uses the gradients of any target concept (say logits for ‘dog’ or even a caption), flowing into the final convolutional layer to produce a coarse localization map highlighting the important regions in the image for predicting the concept.’
 
 Modifying the base network to remove all fully-connected layers at the end, and including a tensor product (followed by softmax), which takes as input the Global-Average-Pooled convolutional feature maps, and outputs the probability for each class.
 
 ![GCAM](https://cdn-images-1.medium.com/max/1000/1*8iyCBSx6i2lRpnKLe5bIrg.png)
 
-2. *Local Interpretable Model-agnostic Explanations* (LIME), a method presented by Marco Tulio Ribeiro, Sameer Singh and Carlos Guestrin in 2016.
+2. **Local Interpretable Model-agnostic Explanations** (LIME), a method presented by Marco Tulio Ribeiro, Sameer Singh and Carlos Guestrin in 2016.
 
 Lime method works by making alterations on different features on a particular input and seeing which of those alterations make the biggest difference to the output classification. Thus highlighting the features most relevant to the network’s decision. The key to lime’s effectiveness is to local element. That means that it does not try explain all the decisions that a network might make across all possible inputs, only the factors that uses to determine its classification for one particular input.
 
