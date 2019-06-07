@@ -41,7 +41,8 @@ There are 5,863 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal). Chest X
 ![d](https://user-images.githubusercontent.com/31864574/59118849-ea72d680-8959-11e9-830e-9372bcdf8f69.png)
 
 ## Model
-Transfer learning was used, more significantly the MobileNet with the trained weights on imagenet. I did some modifications to the MobileNet to adapt it to this case.  The weights of the first 34 layers were freezed, of total 92 layers.
+Transfer learning was used, more significantly the MobileNet with the trained weights on imagenet. I did some modifications to the MobileNet to adapt it to this case.  
+* The weights of the first 53 layers were freezed, of total 92 layers. with Total params: 3,491,778 and Trainable params: 2,926,338
 
 ![MobileNet](https://cdn-images-1.medium.com/max/800/1*XeJGMg7siqgjI6kQ3gke9A.png)
 
